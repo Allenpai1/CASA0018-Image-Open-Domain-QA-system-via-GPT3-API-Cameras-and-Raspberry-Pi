@@ -4,12 +4,12 @@ CASA0018 Project - Image Open Domain QA system via GPT3 API and Cameras
 
 The detailed project description can be found in my report (Link wait to be upolad).
 
-> The system can be trained on PyTorch and TensorFlow, and for both platforms, the source code of Faster-RCNN ares included.  Some issues remained unsolved during the experiment on my M1 macs with [TensorFlow object detection environments](https://github.com/tensorflow/io/issues/1625), so PyTorch was used for the primary results production.
+> The system can be trained on PyTorch and TensorFlow, and for both platforms, the source code of Faster-RCNN are included.  Some issues remained unsolved during the experiment on my M1 macs with [TensorFlow object detection environments](https://github.com/tensorflow/io/issues/1625), so PyTorch was used for the primary results production.
 
 ## System Overview
 
-For this project, I have build a multilingual language (Chinese and English) image-to-text open domain QA system with the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR) consists of 3 steps:
- 1. Language and text detection: a detection model FRCNN is used to recognize the text from the image and language of that text(Chinese or English) and crop the text from the original image with the language classification results passed into downstream tasks;
+For this project, I have build a multilingual language (Chinese and English) image-to-text open domain QA system with the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR). The system consists of 3 steps:
+ 1. Language and text detection: a detection model Fsat-RCNN is used to recognize the text from the image and language of that text(Chinese or English) and crop the text from the original image with the language classification results passed into downstream tasks;
  2. Convert zoomed image to text: the previous step results are passed into paddleOCR, and the corresponding language text recognition model is loaded to extract the text from zoomed text image;
  3. QA system: ChatGPT API is used to pass the detected text and return a detailed answer, saved as PDF format and JPG images.
 
