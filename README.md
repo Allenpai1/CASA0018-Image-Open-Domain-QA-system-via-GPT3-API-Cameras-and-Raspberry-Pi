@@ -22,25 +22,25 @@ Therefore to allow muti-language handwritten text detections, I have trained two
 ## Experiments Environments
  - OS: Intel(R) Core(TM) i5-8259U@230 GHz Macbook pro 2020
  - Platform: Python 3.10.8, pytorch 1.13.1, tensorflow 2.11.1, paddleocr 2.6.1.0, openai 0.27.2
- - GPU:A100-SXM4-80GB hired on[AutoDL](https://www.autodl.com/home)
+ - GPU:A100-SXM4-80GB hired on [AutoDL](https://www.autodl.com/home)
 
 
 ## Install requirements
- - pip install -r requirements.txt
- - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) is already include
+ - ```pip install -r requirements.txt```
+ - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) is already downloaded and included in the file.
 
 
 ## Usage and run
 The code under the folder System code is already defined and ready to use, where the main.py is the system connected with the camera and QA_results.pdf is the returning pdf results; it will get updated once you run.
 
 To run the program:
- <div style="background-color: rgb(50, 50, 50);">
+```
  cd System\ code/
  python main.py
-</div>
+```
 
 The system will return the intermediate results the results will be similar to following:
  1. For Fast-RCNN text language detection:
 
- ![plot](./Images/Chinese.png) | ![plot](./Images/English.png)
+<img src="./Images/Chinese.png" width="425"/> <img src="./Images/English.png" width="425"/> 
  
