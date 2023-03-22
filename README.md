@@ -4,7 +4,7 @@ CASA0018 Project - Image Open Domain QA system via GPT3 API and Cameras
 
 The detailed project description can be found in my report (Link wait to be upolad).
 
-> The system can be trained on PyTorch and TensorFlow, and for both platforms, the source code of Faster-RCNN ares included.  Some issues remained unsolved during the experiment on my M1 macs with [TensorFlow object detection environments](https://github.com/tensorflow/io/issues/1625), so PyTorch was used for the main results.
+> The system can be trained on PyTorch and TensorFlow, and for both platforms, the source code of Faster-RCNN ares included.  Some issues remained unsolved during the experiment on my M1 macs with [TensorFlow object detection environments](https://github.com/tensorflow/io/issues/1625), so PyTorch was used for the primary results production.
 
 ## System Overview
 
