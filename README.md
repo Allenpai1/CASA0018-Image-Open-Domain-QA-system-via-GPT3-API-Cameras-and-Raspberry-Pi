@@ -24,11 +24,13 @@ Therefore to allow muti-language handwritten text detections, I have trained two
  - Platform: Python 3.10.8, pytorch 1.13.1, tensorflow 2.11.1, paddleocr 2.6.1.0, openai 0.27.2
  - GPU:A100-SXM4-80GB hired on [AutoDL](https://www.autodl.com/home)
 
-
 ## Install requirements
  - ```pip install -r requirements.txt```
  - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) is already downloaded and included in the file.
 
+## My Fast-RCNN Detection training Results
+There are many experiments done on the model experiments. I have listed the most interesting ones, where the model trained from scratch is slightly less performed and take long training times than with the backbone resnet50 pre-trained model loaded. The best model achieves a 90.02% AmAP. (Also, try not to train a deep model on the CPU)
+![plot](./Images/accuracy.png)
 
 ## Usage and run
 The code under the folder System code is already defined and ready to use, where the main.py is the system connected with the camera and QA_results.pdf is the returning pdf results; it will get updated once you run.
@@ -42,12 +44,16 @@ To run the program:
 The system will return the intermediate results the results will be similar to following:
  1. For Fast-RCNN text language detection:
  
-![plot](./Images/paddleChinese.png)
+ ![plot](./Images/combine.png)
 
  2. PaddleOCR text extraction results:
-
-![plot](./Images/paddleEnglish.png)
+ ![plot](./Images/paddleChinese.png)
+ ![plot](./Images/paddleEnglish.png)
 
  3. QA results in PDF:
  ![plot](./Images/ChineseDoc.png)
  ![plot](./Images/EnglishDoc.png)
+
+ ## Train you own model
+Ensure the dataset is in the correct VOC format and put it into the folder Pytorch train F-RCNN and run ```python train.py``` Tensorflow train F-RCNN, and you need to change to your classes.txt. It would be beneficial to understand how the network architecture is written by looking at the source code I have included.
+![plot](./Images/FPCNN.png)
