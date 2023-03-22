@@ -24,6 +24,10 @@ Therefore to allow muti-language handwritten text detections, I have trained two
  - Platform: Python 3.10.8, pytorch 1.13.1, tensorflow 2.11.1, paddleocr 2.6.1.0, openai 0.27.2
  - GPU:A100-SXM4-80GB hired on [AutoDL](https://www.autodl.com/home)
 
+## Camera connection and data creation
+ - For ground truth object bounding box creation, I have used [labelImg](https://github.com/heartexlabs/labelImg).
+ - To connect the iPhone camera to the laptop [IP camera](https://github.com/shenyaocn/IP-Camera-Bridge) was used.
+ 
 ## Install requirements
  - ```pip install -r requirements.txt```
  - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) can be donwload on [google drive](https://drive.google.com/drive/folders/1bBdFgyOmAyaZJotF_79pKl8VIXhYggee?usp=sharing) and include in Pytorch\ train\ F-RCNN/model_data for training.
