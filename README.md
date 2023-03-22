@@ -13,7 +13,7 @@ For this project, my multilingual language (Chinese and English) image-to-text o
  2. Convert zoomed image to text: the previous step results are passed into paddleOCR, and the corresponding language text recognition model is loaded to extract the text from zoomed text image.
  3. QA system: ChatGPT API is used to pass the detected text and return a detailed answer, saved as PDF format and JPG images.
 
-![alt text](https://github.com/[Allenpai1]/[CASA0018-Image-Open-Domain-QA-system-via-GPT3-API-and-Cameras]/blob/[main]/Images/system.png?raw=true)
+![alt text](https://github.com/Allenpai1/CASA0018-Image-Open-Domain-QA-system-via-GPT3-API-and-Cameras/main/Images/system.png?raw=true)
 
 I tried the handwritten text recognition models on the open-source library KerasOCR; it turns out that the KeraOCR cannot recognize handwritten text, and only English language recognition models are supported. This is because KerasOCR is primarily designed to recognize printed text. 
 
