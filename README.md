@@ -10,7 +10,7 @@ The detailed project description can be found in my report (Link wait to be upol
 
 For this project, I have build a multilingual language (Chinese and English) image-to-text open domain QA system with the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR) consists of 3 steps:
  1. Language and text detection: a detection model FRCNN is used to recognize the text from the image and language of that text(Chinese or English) and crop the text from the original image with the language classification results passed into downstream tasks;
- 2. Convert zoomed image to text: the previous step results are passed into paddleOCR, and the corresponding language text recognition model is loaded to extract the text from zoomed text image.
+ 2. Convert zoomed image to text: the previous step results are passed into paddleOCR, and the corresponding language text recognition model is loaded to extract the text from zoomed text image;
  3. QA system: ChatGPT API is used to pass the detected text and return a detailed answer, saved as PDF format and JPG images.
 
 ![plot](./Images/system.png)
@@ -29,7 +29,7 @@ Therefore to allow muti-language handwritten text detections, I have trained two
  - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) is already downloaded and included in the file.
 
 ## My Fast-RCNN Detection training Results
-There are many experiments done on the model experiments. I have listed the most interesting ones, where the model trained from scratch is slightly less performed and take long training times than with the backbone resnet50 pre-trained model loaded. The best model achieves a 90.02% AmAP. (Also, try not to train a deep model on the CPU)
+There are many experiments done on the model experiments. I have listed the most interesting ones, where the model trained from scratch is slightly less performed and take long training times than with the backbone resnet50 pre-trained model loaded. The best model achieves a 90.02% AmAP. (Also, try not to train a deep model on the CPU).
 ![plot](./Images/accuracy.png)
 
 ## Usage and run
