@@ -17,44 +17,30 @@ For this project, my multilingual language (Chinese and English) image-to-text o
 
 I tried the handwritten text recognition models on the open-source library KerasOCR; it turns out that the KeraOCR cannot recognize handwritten text, and only English language recognition models are supported. This is because KerasOCR is primarily designed to recognize printed text. 
 
-Therefore to allow muti-language handwritten text detections, I have trained two-stage object detection FAST-RCNN models to detect Chinese or English handwriting questions text from images. The dataset connected by myself contains my handwritten text from ChatGPT history questions. The detected text image is cropped, and, with the language, classification results pass into PaddleOCR to load crossposting text extraction model. Then the detected text is then used as an input pass to the ChatGPT model to return an answer. The program will output intermediate step results and save the final question&answer to a pdf file.
-## Learning Objectives
+Therefore to allow muti-language handwritten text detections, I have trained two-stage object detection FAST-RCNN models to detect Chinese or English handwriting questions text from images. The dataset connected by myself contains my handwritten text from ChatGPT history questions. The detected text image is cropped, and the language classification results pass into PaddleOCR to load the crossposting text extraction model. After that, the detected texts are used as input to pass into the ChatGPT model through an API connection to return an answer. The program will output intermediate step results and save the final Question&Answer to a pdf file. 
 
-On completion, students will be able to:
-
-Domain Knowledge
- - Understand AI / machine learning terminology
- - Understand deep learning opportunities and limitations
- - Understand different types of deep learning models
-
-Prototyping Skills
- - Implement deep learning models in Python
- - Prepare data for model training
- - Select and train suitable models for different use cases (video & timeseries)
- - Embed AI on sensor devices, such as a mobile phone or a microcontroller.
-
-Collaboration
- - Document and share project information to support reproducible research
- - Provide peer feedback to fellow students on project work
- - Present design decisions and prototypes to receive critical feedback
+## Experiments Environments
+ - OS: Intel(R) Core(TM) i5-8259U@230 GHz Macbook pro 2020
+ - Platform: Python 3.10.8, pytorch 1.13.1, tensorflow 2.11.1, paddleocr 2.6.1.0, openai 0.27.2
+ - GPU:A100-SXM4-80GB hired on[AutoDL](https://www.autodl.com/home)
 
 
-## Reading List
-
-There is a course reading list under the ReadingLists@UCL facilty which can be accessed here: (https://ucl.rl.talis.com/modules/casa0018.html)
-
-The core text for the module is [TinyML](https://tinymlbook.com/) by Pete Warden and Daniel Situnayake  
-
-We also reference
-- [Deep Learning](https://www.deeplearningbook.org/) by Ian Goodfellow and Yoshua Bengio and Aaron Courville
-- [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) by Aurélien Géron
+## Install requirements
+ - pip install -r requirements.txt
+ - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) is already include
 
 
-## Assessment
+## Usage and run
+The code under the folder System code is already defined and ready to use, where the main.py is the system connected with the camera and QA_results.pdf is the returning pdf results; it will get updated once you run.
 
-(2500 word equiv)
-- project build (30%),
-- github page - code / docs / photos / video (30%),
-- crit (40%)
+To run the program:
+ <div style="background-color: rgb(50, 50, 50);">
+ cd System\ code/
+ python main.py
+</div>
 
+The system will return the intermediate results the results will be similar to following:
+ 1. For Fast-RCNN text language detection:
 
+ ![plot](./Images/Chinese.png) | ![plot](./Images/English.png)
+ 
