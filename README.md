@@ -27,6 +27,7 @@ Therefore to allow muti-language handwritten text detections, I have trained two
 ## Install requirements
  - ```pip install -r requirements.txt```
  - The pretrained restnet50 backbone model on [VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) can be donwload on [google drive](https://drive.google.com/drive/folders/1bBdFgyOmAyaZJotF_79pKl8VIXhYggee?usp=sharing) and include in Pytorch\ train\ F-RCNN/model_data for training.
+ - The full dataset can be download on [Own dataset](https://drive.google.com/drive/folders/1d7Cq-iJxVMWsWlyYrQ-pGN5UGvLxXnRg?usp=sharing).
 
 ## My Fast-RCNN Detection training Results
 There are many experiments done on the model experiments. I have listed the most interesting ones, where the model trained from scratch is slightly less performed and take long training times than with the backbone resnet50 pre-trained model loaded. The best model achieves a 90.02% AmAP. (Also, try not to train a deep model on the CPU).
@@ -35,7 +36,7 @@ There are many experiments done on the model experiments. I have listed the most
 ## Usage and run
 The code under the folder System code is already defined and ready to use, where the main.py is the system connected with the camera and QA_results.pdf is the returning pdf results; it will get updated once you run.
 
-To run the program you can download my pretrained model on [google drive](https://drive.google.com/drive/folders/1bBdFgyOmAyaZJotF_79pKl8VIXhYggee?usp=sharing) and put it in System\ code/logs folder\:
+To run the program you can download my pretrained model on [google drive](https://drive.google.com/drive/folders/1bBdFgyOmAyaZJotF_79pKl8VIXhYggee?usp=sharing) and put it in System\ code/logs folder and in the main.py program you need to generate personal [ChatGPT-API key](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) :
 ```
  cd System\ code/
  python main.py
