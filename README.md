@@ -36,7 +36,7 @@ There are many experiments done on the model experiments. I have listed the most
 ## Usage and run
 The code under the folder System code is already defined and ready to use, where the main.py is the system connected with the camera and QA_results.pdf is the returning pdf results; it will get updated once you run.
 
-To run the program you can download my pretrained model on [google drive](https://drive.google.com/drive/folders/1bBdFgyOmAyaZJotF_79pKl8VIXhYggee?usp=sharing) and put it in System\ code/logs folder and in the main.py program you need to generate personal [ChatGPT-API key](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) :
+To run the program you can download my pretrained model on [google drive](https://drive.google.com/drive/folders/1bBdFgyOmAyaZJotF_79pKl8VIXhYggee?usp=sharing) and put it in System\ code/logs folder and in the main.py program you need to generate a personal [ChatGPT-API key](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) :
 ```
  cd System\ code/
  python main.py
