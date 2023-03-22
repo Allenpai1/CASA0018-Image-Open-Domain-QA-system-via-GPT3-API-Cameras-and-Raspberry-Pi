@@ -1,0 +1,26 @@
+<annotation>
+	<folder>text image</folder>
+	<filename>IMG_9369.HEIC</filename>
+	<path>/Users/allenli/Desktop/text image/IMG_9369.HEIC</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chinese</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1523</xmin>
+			<ymin>1086</ymin>
+			<xmax>2292</xmax>
+			<ymax>1309</ymax>
+		</bndbox>
+	</object>
+</annotation>
