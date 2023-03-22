@@ -4,11 +4,11 @@ CASA0018 Project - Image Open Domain QA system via GPT3 API and Cameras
 
 The detailed project description can be found in my report (Link wait to be upolad).
 
-> We suggest that students take a fork of this repository so that they can add their own work in progress as they work through the material.
+> The system can be trained on PyTorch and TensorFlow, and for both platforms, the source code of Faster-RCNN ares included.  Some issues remained unsolved during the experiment on my M1 macs with [TensorFlow object detection environments](https://github.com/tensorflow/io/issues/1625), so PyTorch was used for the main results.
 
 ## System Overview
 
-For this project, my multilingual language (Chinese and English) image-to-text open domain QA system with the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR) consists of 3 steps:
+For this project, I have build a multilingual language (Chinese and English) image-to-text open domain QA system with the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR) consists of 3 steps:
  1. Language and text detection: a detection model FRCNN is used to recognize the text from the image and language of that text(Chinese or English) and crop the text from the original image with the language classification results passed into downstream tasks;
  2. Convert zoomed image to text: the previous step results are passed into paddleOCR, and the corresponding language text recognition model is loaded to extract the text from zoomed text image.
  3. QA system: ChatGPT API is used to pass the detected text and return a detailed answer, saved as PDF format and JPG images.
@@ -55,5 +55,5 @@ The system will return the intermediate results the results will be similar to f
  ![plot](./Images/EnglishDoc.png)
 
  ## Train you own model
-Ensure the dataset is in the correct VOC format and put it into the folder Pytorch train F-RCNN and run ```python train.py``` Tensorflow train F-RCNN, and you need to change to your classes.txt. It would be beneficial to understand how the network architecture is written by looking at the source code I have included.
-![plot](./Images/FPCNN.png)
+Ensure the dataset is in the correct VOC format and put it into the folder PyTorch train F-RCNN and run ```python train.py``` and you need to change your own model_data/classes.txt. It would be beneficial to understand how the network architecture is written by looking at the source code I have included.
+![plot](./Images/FRCNN.png)
