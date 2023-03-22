@@ -41,6 +41,13 @@ To run the program:
 
 The system will return the intermediate results the results will be similar to following:
  1. For Fast-RCNN text language detection:
-
-<img src="./Images/Chinese.png" width="425"/> <img src="./Images/English.png" width="425"/> 
  
+![plot](./Images/paddleChinese.png)
+
+ 2. PaddleOCR text extraction results:
+
+![plot](./Images/paddleEnglish.png)
+
+ 3. QA results in PDF:
+ ![plot](./Images/ChineseDoc.png)
+ ![plot](./Images/EnglishDoc.png)
