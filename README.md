@@ -46,7 +46,7 @@ To run the program you can download my pretrained model on [google drive](https:
  python main.py
 ```
 When the camera is launched, press the ```space``` keyword to take the photo and ```q``` to quit the system.
-The system will return the intermediate results the results will be similar to following:
+The system will return the intermediate results, the results will be similar as following:
  1. For Fast-RCNN text language detection:
  
  ![plot](./Images/combine.png)
@@ -60,5 +60,5 @@ The system will return the intermediate results the results will be similar to f
  ![plot](./Images/EnglishDoc.png)
 
  ## Train you own model
-Ensure the dataset is in the correct VOC format and put it into the folder PyTorch train F-RCNN and run ```python train.py``` and you need to change your own model_data/classes.txt. It would be beneficial to understand how the network architecture is written by looking at the source code I have included.
+Ensure the dataset is in the correct VOC format and put it into the folder PyTorch train F-RCNN and run ```python train.py``` and you need to change your own model_data/classes.txt. It would be beneficial to understand how the network architecture is written by looking at the source code I have included. The source codes are collected from [faster-rcnn-pytorch](https://github.com/bubbliiiing/faster-rcnn-pytorch) and [tensorflow-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn).
 ![plot](./Images/FRCNN.png)
