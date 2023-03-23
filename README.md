@@ -45,7 +45,7 @@ To run the program you can download my pretrained model on [google drive](https:
  cd System\ code/
  python main.py
 ```
-
+When the camera is launched, press the ```space``` keyword to take the photo and ```q``` to quit the system.
 The system will return the intermediate results the results will be similar to following:
  1. For Fast-RCNN text language detection:
  
