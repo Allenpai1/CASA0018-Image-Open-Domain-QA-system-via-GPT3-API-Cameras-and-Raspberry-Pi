@@ -2,8 +2,6 @@
 
 ### CASA0018 Project - Image Open Domain QA system via GPT3 API, Cameras and Raspberry Pi
 
-<br />
-
 ### The detailed project description can be found in [my report](./report/report.md).
 
 <br />
