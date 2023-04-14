@@ -1,8 +1,8 @@
-# CASA0018 Project - Image Open Domain QA system via GPT3 API, Cameras and Raspberry Pi
+# CASA0018 Project - Image Open Domain QA system via GPT3 API, Cameras and Raspberry Pi 4B
 
-### CASA0018 Project - Image Open Domain QA system via GPT3 API, Cameras and Raspberry Pi
+### CASA0018 Project - Image Open Domain QA system via GPT3 API, Cameras and Raspberry Pi 4B
 
-### The detailed project description can be found in [my report](./report/report.md).
+### The detailed project description can be find in [my report](./report/report.md).
 
 <br />
 
@@ -24,8 +24,9 @@ Therefore to allow muti-language handwritten text detections, I have trained two
 ## Experiments Environments
  - OS: Intel(R) Core(TM) i5-8259U@230 GHz Macbook pro 2020
  - Raspberry Pi 4B 4GB OS(64-bit)
- - Platform: Python 3.10.8, pytorch 1.13.1, tensorflow 2.11.1, paddleocr 2.6.1.0, openai 0.27.2
+ - Platform: Python 3.10.8, pytorch 1.13.1, tensorflow 2.11.1, paddleocr 2.6.1.0, openai 0.27.2, OpenCV 4.5.5
  - GPU:A100-SXM4-80GB hired on [AutoDL](https://www.autodl.com/home)
+ - IPhone with [IP Camera](https://github.com/shenyaocn/IP-Camera-Bridge) App
 
 ## Camera connection and data creation
  - For ground truth object bounding box creation, I have used [labelImg](https://github.com/heartexlabs/labelImg).
@@ -38,7 +39,7 @@ Therefore to allow muti-language handwritten text detections, I have trained two
 
 ## My Faster-RCNN Detection training Results
 Many experiments are done on the model experiments; please see [my report](./report/report.md) for more details. I have listed the most interesting ones, where the model trained from scratch is slightly less performed and take long training times than with the backbone resnet50 pre-trained model loaded. The best model achieves a 90.02% AmAP. (Also, try not to train a deep model on the CPU).
-![plot](./Images/accuracy2.png)
+![plot](./report/compare.png)
 
 ## Usage and run
 The code under the folder System code is already defined and ready to use, where the main.py is the system connected with the camera and QA_results.pdf is the returning pdf results; it will get updated once you run.
