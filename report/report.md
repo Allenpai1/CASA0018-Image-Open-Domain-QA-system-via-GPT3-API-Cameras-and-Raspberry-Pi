@@ -90,24 +90,29 @@ It is important to note that during the training stage, the model performance is
 
 ### Detection training Results
 
-The evaluation results for the model on the test set are shown in Table 3. The results reveal that the model trained from scratch performs worse than the one with a ResNet50 Backbone loaded. However, the best model achieved an average mAP of 90.02% after hyperparameter tuning. Additionally, it is advisable to avoid training deep network models like Faster-RCNN, which have over 40 million parameters, on a CPU due to high computational demands.
+The evaluation results for the model on the test set are shown in Table 3. The results reveal that the model trained from scratch performs worse than the one with a ResNet50 Backbone loaded. However, the best model achieved an average mAP of 90.02% after hyperparameter tuning. Additionally, it is advisable to avoid training deep network models like Faster-RCNN, which have over 40 million parameters, on a CPU due to high computational demands. The ROC curve for best model evaluated on test set can be see in Fig 5.
 
 ![plot](compare.png)
 
 <center>Table 3. Faster-RCNN main model comparisons on test set </center>
 
+![plot](precision.png)
+
+<center>Fig 5. Faster-RCNN best model ROC curve </center>
+
 ## Embed model on Raspberry Pi 4B
 
-I have chosen the [Raspberry Pi 4B](https://www.raspberrypi.com/software/), a single-board computer developed by the Raspberry Pi Foundation, to embed my model. This fourth-generation Raspberry Pi uses the BCM2711 system on a chip (SoC) from Broadcom and can be connected to my laptop using the ssh protocol (see Fig 5.).
+I have chosen the [Raspberry Pi 4B](https://www.raspberrypi.com/software/), a single-board computer developed by the Raspberry Pi Foundation, to embed my model. This fourth-generation Raspberry Pi uses the BCM2711 system on a chip (SoC) from Broadcom and can be connected to my laptop using the ssh protocol (see Fig 6.).
 
 ![plot](setting.jpg)
 
-<center>Fig 5. Raspberry Pi connection display </center>
+<center>Fig 6. Raspberry Pi connection display </center>
 
-The entire system, comprising own trained, PaddleOCR, and OpenAI GPT-api models, takes approximately 37 seconds to process an image captured by the camera on my MacBookPro CPU. This duration is not feasible for real-time captioning (Not our Goal). Despite the possibility of embedding the entire system on Raspberry Pi 4B, the CPU power of Raspberry Pi 4B is significantly lower than that of MacBookPro, resulting in an excessively long overall evaluation time. Therefore, I have only integrated my own trained language detection model into Raspberry Pi 4B (refer to Fig 6.). The evaluation time on Raspberry Pi 4B is roughly 50 seconds, while it takes only about 10 seconds on MacBookPro CPU, which is approximately five times faster than Raspberry Pi. Moreover, we could contemplate using potent CUDA GPUs to expedite the evaluation process. However, both Raspberry Pi 4B and MacBookPro does not support CUDA GPU, which is a drawback.
+The entire system, comprising own trained, PaddleOCR, and OpenAI GPT-api models, takes approximately 37 seconds to process an image captured by the camera on my MacBookPro CPU. This duration is not feasible for real-time captioning (Not our Goal). Despite the possibility of embedding the entire system on Raspberry Pi 4B, the CPU power of Raspberry Pi 4B is significantly lower than that of MacBookPro, resulting in an excessively long overall evaluation time. Therefore, I have only integrated my own trained language detection model into Raspberry Pi 4B (refer to Fig 7.). The evaluation time on Raspberry Pi 4B is roughly 50 seconds, while it takes only about 10 seconds on MacBookPro CPU, which is approximately five times faster than Raspberry Pi. Moreover, we could contemplate using potent CUDA GPUs to expedite the evaluation process. However, both Raspberry Pi 4B and MacBookPro does not support CUDA GPU, which is a drawback.
+
 ![plot](evaluation.png)
 
-<center>Fig 6. Raspberry Pi Faster-RCNN language detection model evaluation </center>
+<center>Fig 7. Raspberry Pi Faster-RCNN language detection model evaluation </center>
 
 
 ## Dicussion and Conclusion
@@ -115,13 +120,13 @@ The entire system, comprising own trained, PaddleOCR, and OpenAI GPT-api models,
 ### Discussion
 
 
-The system encountered a problem similar to Keras OCR where text recognition was not in order for English language, but it was not the case for Chinese language. This is because in English, we usually have spaces between words, which creates more bounding boxes when detecting the text (see Fig 6.). To address this issue, we could write codes to sort the bounding boxes from top-left to bottom-right using the [Pythagorean Theorem approach](https://github.com/shegocodes/keras-ocr).
+The system encountered a problem similar to Keras OCR where text recognition was not in order for English language, but it was not the case for Chinese language. This is because in English, we usually have spaces between words, which creates more bounding boxes when detecting the text (see Fig 8.). To address this issue, we could write codes to sort the bounding boxes from top-left to bottom-right using the [Pythagorean Theorem approach](https://github.com/shegocodes/keras-ocr).
 
 ![plot](paddleChinese.png)
 
 ![plot](paddleEnglish.png)
 
-<center>Fig 7. Paddle OCR detection Results </center>
+<center>Fig 8. Paddle OCR detection Results </center>
 
 ### Conclusion
 
