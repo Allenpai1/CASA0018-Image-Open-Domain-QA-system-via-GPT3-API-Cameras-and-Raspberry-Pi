@@ -102,7 +102,7 @@ The evaluation results for the model on the test set are shown in Table 3. The r
 
 ## Embed model on Raspberry Pi 4B
 
-I have chosen the [Raspberry Pi 4B](https://www.raspberrypi.com/software/), a single-board computer developed by the Raspberry Pi Foundation, to embed my model. This fourth-generation Raspberry Pi uses the BCM2711 system on a chip (SoC) from Broadcom and can be connected to my laptop using the ssh protocol (see Fig 6.).
+I have chosen the [Raspberry Pi 4B](https://www.raspberrypi.com/software/), a single-board computer developed by the Raspberry Pi Foundation, to embed my model. This fourth-generation Raspberry Pi uses the BCM2711 system on a chip (SoC) from Broadcom and can be connected to my laptop using the ssh protocol and [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/macos/) (see Fig 6.).
 
 ![plot](setting.jpg)
 
