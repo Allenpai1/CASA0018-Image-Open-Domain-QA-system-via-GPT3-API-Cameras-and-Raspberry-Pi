@@ -10,7 +10,7 @@ In March 2, 2023 the latest version of the GPT-3.5 turbo API was released. The G
 
 OCR (Optical Character Recognition) is the process of electronically extracting text from images or any documents like PDF and reusing it in various ways, such as full-text searches. Technically, two trained model models are used to perform OCR. The first is the detection model, which is used to detect the text in the image. The second one is the recognition model, which is used to recognize the text in the image. The most used OCR open-source libraries are Keras-OCR, Tesseract(Google), and Paddle-OCR(Baidu).
 
-The objective of this project is to develop a multilingual image-to-text open-domain QA system that is capable of processing both English and Chinese languages. The system will be built by training a new model that can detect hand-written ChatGPT questions and their respective languages, and subsequently forwarding the results to downstream tasks through the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR) pre-trained models. The system's primary function is to provide accurate answers to questions pertaining to the text present in the image.
+The objective of this project is to develop a multilingual image-to-text open-domain QA system that is capable of processing both English and Chinese languages. The system will be built by training a new model that can detect hand-written ChatGPT questions and their respective languages, and subsequently forwarding the results to downstream tasks through the [ChatGPT-API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and [Paddle OCR](https://github.com/PaddlePaddle/PaddleOCR) pre-trained models. The system's primary function is to provide accurate answers from question text present in the image taken by a real-time connected camera.
 
 ## System Overview
 The system consists of 3 steps:
@@ -96,7 +96,19 @@ The evaluation results for the model on the test set are shown in Table 3. The r
 
 <center>Table 3. Faster-RCNN main model comparisons on test set </center>
 
-## Embed model on Raspberry Pi 4
+## Embed model on Raspberry Pi 4B
+
+I have chosen the [Raspberry Pi 4B](https://www.raspberrypi.com/software/), a single-board computer developed by the Raspberry Pi Foundation, to embed my model. This fourth-generation Raspberry Pi uses the BCM2711 system on a chip (SoC) from Broadcom and can be connected to my laptop using the ssh protocol (see Fig 5.).
+
+![plot](setting.jpg)
+
+<center>Fig 5. Raspberry Pi connection display </center>
+
+The entire system, comprising own trained, PaddleOCR, and OpenAI GPT-api models, takes approximately 37 seconds to process an image captured by the camera on my MacBookPro CPU. This duration is not feasible for real-time captioning (Not our Goal). Despite the possibility of embedding the entire system on Raspberry Pi 4B, the CPU power of Raspberry Pi 4B is significantly lower than that of MacBookPro, resulting in an excessively long overall evaluation time. Therefore, I have only integrated my own trained language detection model into Raspberry Pi 4B (refer to Fig 6.). The evaluation time on Raspberry Pi 4B is roughly 50 seconds, while it takes only about 10 seconds on MacBookPro CPU, which is approximately five times faster than Raspberry Pi. Moreover, we could contemplate using potent CUDA GPUs to expedite the evaluation process. However, both Raspberry Pi 4B and MacBookPro does not support CUDA GPU, which is a drawback.
+![plot](evaluation.png)
+
+<center>Fig 6. Raspberry Pi Faster-RCNN language detection model evaluation </center>
+
 
 ## Dicussion and Conclusion
 
@@ -109,7 +121,7 @@ The system encountered a problem similar to Keras OCR where text recognition was
 
 ![plot](paddleEnglish.png)
 
-<center>Table 6. Paddle OCR detection Results </center>
+<center>Fig 7. Paddle OCR detection Results </center>
 
 ### Conclusion
 
@@ -141,4 +153,4 @@ The system performs well overall, particularly the custom-trained model, which c
 
 I, Haijin Li, confirm that the work presented in this assessment is my own. Material from the work of others not involved in the project has been acknowledged and quotations and paraphrases suitably indicated.
 
-20/04/2022
+14/04/2022
